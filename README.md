@@ -2,6 +2,12 @@
 
 Веб-приложение для заполнения анкеты с использованием Angular.
 
+![анкета](https://github.com/user-attachments/assets/3d81367e-f71e-467b-b94a-67288b511a09)
+
+
+https://github.com/user-attachments/assets/6e361bf7-b29a-442a-b12f-5073d4114bc6
+
+
 ### Стэк
 
 - Angular 18
