@@ -1,0 +1,19 @@
+<section class="form-group">
+  <label>{{ label }}</label>
+  <div class="custom-select">
+    <div class="selected-value" (click)="toggleDropdown()">
+      {{ value || 'Выберите значение' }}
+      <span class="arrow" [class.rotated]="isOpen"></span>
+    </div>
+    <div class="options" *ngIf="isOpen">
+      <div
+        *ngFor="let choice of choices"
+        class="option"
+        (click)="selectOption(choice)"
+        [class.selected]="choice === value"
+      >
+        {{ choice }}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<section class="form-group">
+  <label>{{ label }}</label>
+
+  <div class="checkbox-group">
+    <div class="column">
+      <div class="column-item" *ngFor="let option of options.slice(0, Math.ceil(options.length / 2))">
+        <label>
+          <input type="checkbox" [(ngModel)]="option.checked" (change)="updateSkills(option)">
+          {{ option.label }}
+        </label>
+      </div>
+    </div>
+
+    <div class="column">
+      <div *ngFor="let option of options.slice(Math.ceil(options.length / 2))">
+        <label [style.font-weight]="option.value === 'all' ? 'bold' : 'normal'">
+          <input type="checkbox" [(ngModel)]="option.checked" (change)="updateSkills(option)">
+          {{ option.label }}
+        </label>
+      </div>
+    </div>
+  </div>
+</section>

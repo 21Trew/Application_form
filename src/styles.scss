@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'PT Sans', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+input, select {
+  border: 1px solid #C3C3C3;
+  border-radius: 3px;
+  padding: 10px 15px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 17px;
+  height: 44px;
+}

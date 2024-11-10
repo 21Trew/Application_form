@@ -1,27 +1,79 @@
-# Background
+## Анкета
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
+Веб-приложение для заполнения анкеты с использованием Angular.
 
-## Development server
+### Стэк
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Angular 18
+- Typescript
+- SCSS
+- Angular Cli
+- npm
 
-## Code scaffolding
+### Описание проекта
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Данный проект представляет собой генератор форм, 
+реализованный с использованием Angular. 
+Он состоит из четырех базовых компонентов, 
+кастомизируемых под конкретные задачи:
 
-## Build
+1. **testInput** - компонент для текстового ввода.
+2. **testSelect** - компонент для выбора из списка.
+3. **testNumber** - компонент для ввода чисел.
+4. **testCheckbox** - компонент для работы с чекбоксами.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Функциональность
 
-## Running unit tests
+- **Генерация формы**: Из четырех компонентов может быть сгенерировано любое количество полей формы. Каждый компонент возвращает значение для общей модели `testForm`, например: `testForm.name`, `testForm.age`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Динамическое создание формы**: JSON формат, по которому происходит генерация, приходит с сервера. Формат включает как минимум:
+  - `label` (обязательно для всех)
+  - `description` (необязательное поле)
+  - `required` (необязательное поле)
+  - `choices` (обязательное не для всех)
 
-## Running end-to-end tests
+- **Редактирование формы**: Форма обязательно должна иметь возможность редактирования. Мы можем заново собрать форму, подставить модель `testForm`, и все значения будут подставлены в компоненты.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **Модификаторы компонентов**: Компоненты, имеющие разные виды представления, имеют параметры модификаторы. Например, в компоненте `testSelect` активный элемент может быть выделен в списке вариантов или исключен из списка.
 
-## Further help
+- **Валидация полей формы**: Валидация полей формы реализована по желанию, что позволяет улучшить пользовательский опыт.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Установка и запуск
+
+1. **Установите Node.js и npm**:
+  - Убедитесь, что на вашем устройстве установлены [Node.js](https://nodejs.org/) и npm (Node Package Manager). Это необходимо для работы Angular CLI.
+
+2. **Установите Angular CLI**:
+  - Откройте терминал или командную строку и выполните команду:
+    ```bash
+    npm install -g @angular/cli
+    ```
+
+3. **Клонируйте репозиторий**:
+  - Склонируйте проект на ваше устройство с помощью Git:
+    ```bash
+    git clone <URL_репозитория>
+    ```
+  - Перейдите в директорию проекта:
+    ```bash
+    cd <имя_папки_проекта>
+    ```
+
+4. **Установите зависимости**:
+  - Выполните команду для установки всех необходимых зависимостей:
+    ```bash
+    npm install
+    ```
+
+5. **Запустите сервер разработки**:
+  - Выполните команду:
+    ```bash
+    ng serve
+    ```
+  - Перейдите по адресу `http://localhost:4200/` в вашем веб-браузере. Приложение автоматически перезагрузится, если вы измените любой из исходных файлов.
+
+### Структура проекта
+
+- `/src` - исходный код приложения
+- `/dist` - скомпилированные файлы
+- `/public` - статические ресурсы
